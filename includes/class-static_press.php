@@ -372,6 +372,7 @@ CREATE TABLE `{$this->url_table}` (
 		$blog_charset = get_option('blog_charset');
 		switch ($file_type) {
 		case 'front_page':
+		case 'seo_files':
 		case 'single':
 		case 'term_archive':
 		case 'author_archive':
