@@ -165,6 +165,12 @@ class static_press_admin {
 }
 #icon-static-press {background-image: url(<?php echo plugins_url('images/rebuild32.png', dirname(__FILE__)); ?>);}
 #icon-static-press-options {background-image: url(<?php echo plugins_url('images/options32.png', dirname(__FILE__)); ?>);}
+#rebuild-result .result-list {
+	background-color: white;
+	height: 10em;
+	overflow: scroll;
+	padding: .5em .75em;
+}
 </style>
 <?php
 
@@ -389,7 +395,8 @@ jQuery(function($){
 						}
 					});
 					if(ul.children().size() > 0)
-						$('html,body').animate({scrollTop: $('li:last-child', ul).offset().top},'slow');
+						// $('html,body').animate({scrollTop: $('li:last-child', ul).offset().top},'slow');
+						$(ul).animate({scrollTop: $(ul)[0].scrollHeight});
 					if (response.final)
 						static_press_finalyze();
 					else
